@@ -21,79 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Answers will map question index -> selected option ('A' or 'B')
     let userAnswers = {}; 
-
-    /* --- Questions Data (Placeholder) ---
-       Setiap variabel memiliki 3 soal. 
-       Total 18 soal, 6 Variabel (Hardworking, Procrastination, Conscientiousness, Locus of Control, Responsibility, Neuroticism)
-       Key answer bernilai 2, Other answer bernilai 1.
-    */
-    const questions = [
-        // 1. Hardworking
-        { id: 1, text: "Dalam bekerja, saya cenderung...", var: "Hardworking",
-          optionA: { text: "Terus berusaha meskipun menemui kebuntuan (Key)", isKey: true },
-          optionB: { text: "Mencari alternatif yang lebih santai", isKey: false } },
-        { id: 2, text: "Ketika saya diberikan target yang tinggi...", var: "Hardworking",
-          optionA: { text: "Saya merasa tertantang dan bekerja ekstra", isKey: false },
-          optionB: { text: "Saya membagi target menjadi tugas-tugas kecil yang bisa diselesaikan bertahap (Key)", isKey: true } },
-        { id: 3, text: "Jika ada pekerjaan di luar jam kantor...", var: "Hardworking",
-          optionA: { text: "Saya bersedia lembur agar cepat selesai (Key)", isKey: true },
-          optionB: { text: "Saya memilih menundanya hingga esok", isKey: false } },
-
-        // 2. Procrastination (Inverse logic conceptually, but scoring follows 'Key' = 2 for good micro-credit score)
-        { id: 4, text: "Menghadapi tenggat waktu yang ketat...", var: "Procrastination",
-          optionA: { text: "Saya langsung menyelesaikannya secepat mungkin (Key)", isKey: true },
-          optionB: { text: "Saya lebih suka mengerjakan tugas lain dan menyelesaikannya nanti", isKey: false } },
-        { id: 5, text: "Bila saya diberikan tugas yang membosankan...", var: "Procrastination",
-          optionA: { text: "Saya cenderung menundanya sedikit", isKey: false },
-          optionB: { text: "Saya segera menyelesaikannya agar tidak membebani pikiran (Key)", isKey: true } },
-        { id: 6, text: "Saat ada proyek baru...", var: "Procrastination",
-          optionA: { text: "Saya akan mulai mencicil dari sekarang (Key)", isKey: true },
-          optionB: { text: "Saya menunggu inspirasi datang sebelum mulai", isKey: false } },
-
-        // 3. Conscientiousness
-        { id: 7, text: "Dalam merencanakan sesuatu...", var: "Conscientiousness",
-          optionA: { text: "Saya sangat teliti pada detail-detail kecil (Key)", isKey: true },
-          optionB: { text: "Saya lebih mementingkan gambaran besar secara fleksibel", isKey: false } },
-        { id: 8, text: "Setelah menyelesaikan pekerjaan...", var: "Conscientiousness",
-          optionA: { text: "Saya merasa cukup jika sudah selesai", isKey: false },
-          optionB: { text: "Saya akan memeriksa ulang untuk memastikan tidak ada kesalahan (Key)", isKey: true } },
-        { id: 9, text: "Terhadap aturan dan prosedur yang berlaku...", var: "Conscientiousness",
-          optionA: { text: "Saya mematuhinya dengan disiplin tinggi (Key)", isKey: true },
-          optionB: { text: "Saya kadang menyesuaikannya dengan situasi", isKey: false } },
-
-        // 4. Locus of Control
-        { id: 10, text: "Ketika sesuatu yang buruk terjadi pada hidup saya...", var: "Locus of Control",
-          optionA: { text: "Saya percaya hal itu ada penyebab dari luar (nasib/orang lain)", isKey: false },
-          optionB: { text: "Saya yakin bahwa sebagian besar karena kesalahan atau kendali saya (Key)", isKey: true } },
-        { id: 11, text: "Mengenai kesuksesan finansial...", var: "Locus of Control",
-          optionA: { text: "Saya percaya kerja keras akan membawakan hasil yang saya atur (Key)", isKey: true },
-          optionB: { text: "Saya percaya keberuntungan memegang peran besar (Key)", isKey: false } },
-        { id: 12, text: "Jika saya gagal dalam sebuah usaha...", var: "Locus of Control",
-          optionA: { text: "Saya mengevaluasi strategi saya dan mencoba lagi (Key)", isKey: true },
-          optionB: { text: "Mungkin memang pasar sedang tidak berpihak kepada saya", isKey: false } },
-
-        // 5. Responsibility
-        { id: 13, text: "Jika saya melakukan kesalahan saat bertugas...", var: "Responsibility",
-          optionA: { text: "Saya berani mengakui kesalahan dan memperbaikinya (Key)", isKey: true },
-          optionB: { text: "Saya akan mencari alasan mengapa hal itu terjadi", isKey: false } },
-        { id: 14, text: "Jika saya meminjam uang atau barang...", var: "Responsibility",
-          optionA: { text: "Saya berusaha mengembalikannya tepat waktu tanpa ditagih (Key)", isKey: true },
-          optionB: { text: "Saya mengembalikannya jika yang meminjamkan sudah menagih", isKey: false } },
-        { id: 15, text: "Berkenaan dengan janji...", var: "Responsibility",
-          optionA: { text: "Saya sering lupa jika banyak beban pikiran", isKey: false },
-          optionB: { text: "Saya selalu menepati janji sekecil apapun (Key)", isKey: true } },
-
-        // 6. Neuroticism (Inverse logic: Key should represent low neuroticism/emotional stability)
-        { id: 16, text: "Ketika saya di bawah tekanan tinggi...", var: "Neuroticism",
-          optionA: { text: "Saya mudah merasa panik dan cemas", isKey: false },
-          optionB: { text: "Saya tetap tenang dan fokus mencari solusi (Key)", isKey: true } },
-        { id: 17, text: "Bila saya menerima kritik tajam...", var: "Neuroticism",
-          optionA: { text: "Saya merenungkannya berhari-hari dan merasa jatuh", isKey: false },
-          optionB: { text: "Saya menjadikannya evaluasi praktis dan terus maju (Key)", isKey: true } },
-        { id: 18, text: "Menghadapi kegagalan mendadak...", var: "Neuroticism",
-          optionA: { text: "Saya bisa bangkit dan tidak membiarkannya merusak mood saya (Key)", isKey: true },
-          optionB: { text: "Suasana hati saya sangat terpukul dan butuh waktu lama pulih", isKey: false } }
-    ];
+    let questions = [];
 
     /* --- Navigation Functions --- */
     function showView(viewId, stepIndex) {
@@ -122,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* --- Form Submission (Step 1 -> 2) --- */
-    demographicForm.addEventListener('submit', (e) => {
+    demographicForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         userData = {
@@ -133,6 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
             occupation: document.getElementById('occupation').value,
             income: document.getElementById('income').value
         };
+
+        // Fetch questions from JSON file
+        try {
+            const response = await fetch('questions.json');
+            if (!response.ok) {
+                throw new Error('Gagal memuat pertanyaan referensi.');
+            }
+            questions = await response.json();
+        } catch (error) {
+            console.error(error);
+            alert("Terjadi kesalahan saat memuat soal. Pastikan file questions.json tersedia.");
+            return; // Stop flow error
+        }
 
         showView('viewTest', 2);
         renderQuestion();
