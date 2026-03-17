@@ -92,15 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         questionContainer.innerHTML = `
             <div class="question-content">
-                <h3>${q.text}</h3>
+                <h3>${q.question}</h3>
                 <div class="options-container">
-                    <button type="button" class="option-btn ${selectedOpt === 'A' ? 'selected' : ''}" data-choice="A">
+                    <button type="button" class="option-btn ${selectedOpt === 'a' ? 'selected' : ''}" data-choice="a">
                         <div class="option-indicator"><i class="fa-solid fa-check"></i></div>
-                        ${q.optionA.text}
+                        ${q.option_a}
                     </button>
-                    <button type="button" class="option-btn ${selectedOpt === 'B' ? 'selected' : ''}" data-choice="B">
+                    <button type="button" class="option-btn ${selectedOpt === 'b' ? 'selected' : ''}" data-choice="b">
                         <div class="option-indicator"><i class="fa-solid fa-check"></i></div>
-                        ${q.optionB.text}
+                        ${q.option_b}
                     </button>
                 </div>
             </div>
@@ -165,12 +165,20 @@ document.addEventListener('DOMContentLoaded', () => {
         questions.forEach((q, index) => {
             const answer = userAnswers[index];
             let isKey = false;
-            if (answer === 'A') isKey = q.optionA.isKey;
-            if (answer === 'B') isKey = q.optionB.isKey;
+            if (answer && answer.toLowerCase() === q.key.toLowerCase()) {
+                isKey = true;
+            }
 
             const score = isKey ? 2 : 1;
             totalScore += score;
-            varScores[q.var] += score;
+            
+            // Handle case mismatch or slight difference in user JSON variable names if any
+            // For now assume perfect match mappings
+            if(varScores[q.variable] !== undefined) {
+               varScores[q.variable] += score;
+            } else {
+               varScores[q.variable] = score; // Fallback to add new key if needed
+            }
         });
 
         showResult(totalScore, varScores);

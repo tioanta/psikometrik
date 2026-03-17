@@ -1,236 +1,146 @@
 [
-    {
-        "id": 1,
-        "text": "Dalam bekerja, saya cenderung...",
-        "var": "Hardworking",
-        "optionA": {
-            "text": "Terus berusaha meskipun menemui kebuntuan",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Mencari alternatif yang lebih santai",
-            "isKey": false
-        }
-    },
-    {
-        "id": 2,
-        "text": "Ketika saya diberikan target yang tinggi...",
-        "var": "Hardworking",
-        "optionA": {
-            "text": "Saya merasa tertantang dan bekerja ekstra",
-            "isKey": false
-        },
-        "optionB": {
-            "text": "Saya membagi target menjadi tugas-tugas kecil yang bisa diselesaikan bertahap",
-            "isKey": true
-        }
-    },
-    {
-        "id": 3,
-        "text": "Jika ada pekerjaan di luar jam kantor...",
-        "var": "Hardworking",
-        "optionA": {
-            "text": "Saya bersedia lembur agar cepat selesai",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya memilih menundanya hingga esok",
-            "isKey": false
-        }
-    },
-    {
-        "id": 4,
-        "text": "Menghadapi tenggat waktu yang ketat...",
-        "var": "Procrastination",
-        "optionA": {
-            "text": "Saya langsung menyelesaikannya secepat mungkin",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya lebih suka mengerjakan tugas lain dan menyelesaikannya nanti",
-            "isKey": false
-        }
-    },
-    {
-        "id": 5,
-        "text": "Bila saya diberikan tugas yang membosankan...",
-        "var": "Procrastination",
-        "optionA": {
-            "text": "Saya cenderung menundanya sedikit",
-            "isKey": false
-        },
-        "optionB": {
-            "text": "Saya segera menyelesaikannya agar tidak membebani pikiran",
-            "isKey": true
-        }
-    },
-    {
-        "id": 6,
-        "text": "Saat ada proyek baru...",
-        "var": "Procrastination",
-        "optionA": {
-            "text": "Saya akan mulai mencicil dari sekarang",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya menunggu inspirasi datang sebelum mulai",
-            "isKey": false
-        }
-    },
-    {
-        "id": 7,
-        "text": "Dalam merencanakan sesuatu...",
-        "var": "Conscientiousness",
-        "optionA": {
-            "text": "Saya sangat teliti pada detail-detail kecil",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya lebih mementingkan gambaran besar secara fleksibel",
-            "isKey": false
-        }
-    },
-    {
-        "id": 8,
-        "text": "Setelah menyelesaikan pekerjaan...",
-        "var": "Conscientiousness",
-        "optionA": {
-            "text": "Saya merasa cukup jika sudah selesai",
-            "isKey": false
-        },
-        "optionB": {
-            "text": "Saya akan memeriksa ulang untuk memastikan tidak ada kesalahan",
-            "isKey": true
-        }
-    },
-    {
-        "id": 9,
-        "text": "Terhadap aturan dan prosedur yang berlaku...",
-        "var": "Conscientiousness",
-        "optionA": {
-            "text": "Saya mematuhinya dengan disiplin tinggi",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya kadang menyesuaikannya dengan situasi",
-            "isKey": false
-        }
-    },
-    {
-        "id": 10,
-        "text": "Ketika sesuatu yang buruk terjadi pada hidup saya...",
-        "var": "Locus of Control",
-        "optionA": {
-            "text": "Saya percaya hal itu ada penyebab dari luar (nasib/orang lain)",
-            "isKey": false
-        },
-        "optionB": {
-            "text": "Saya yakin bahwa sebagian besar karena kesalahan atau kendali saya",
-            "isKey": true
-        }
-    },
-    {
-        "id": 11,
-        "text": "Mengenai kesuksesan finansial...",
-        "var": "Locus of Control",
-        "optionA": {
-            "text": "Saya percaya kerja keras akan membawakan hasil yang saya atur",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya percaya keberuntungan memegang peran besar",
-            "isKey": false
-        }
-    },
-    {
-        "id": 12,
-        "text": "Jika saya gagal dalam sebuah usaha...",
-        "var": "Locus of Control",
-        "optionA": {
-            "text": "Saya mengevaluasi strategi saya dan mencoba lagi",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Mungkin memang pasar sedang tidak berpihak kepada saya",
-            "isKey": false
-        }
-    },
-    {
-        "id": 13,
-        "text": "Jika saya melakukan kesalahan saat bertugas...",
-        "var": "Responsibility",
-        "optionA": {
-            "text": "Saya berani mengakui kesalahan dan memperbaikinya",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya akan mencari alasan mengapa hal itu terjadi",
-            "isKey": false
-        }
-    },
-    {
-        "id": 14,
-        "text": "Jika saya meminjam uang atau barang...",
-        "var": "Responsibility",
-        "optionA": {
-            "text": "Saya berusaha mengembalikannya tepat waktu tanpa ditagih",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Saya mengembalikannya jika yang meminjamkan sudah menagih",
-            "isKey": false
-        }
-    },
-    {
-        "id": 15,
-        "text": "Berkenaan dengan janji...",
-        "var": "Responsibility",
-        "optionA": {
-            "text": "Saya sering lupa jika banyak beban pikiran",
-            "isKey": false
-        },
-        "optionB": {
-            "text": "Saya selalu menepati janji sekecil apapun",
-            "isKey": true
-        }
-    },
-    {
-        "id": 16,
-        "text": "Ketika saya di bawah tekanan tinggi...",
-        "var": "Neuroticism",
-        "optionA": {
-            "text": "Saya mudah merasa panik dan cemas",
-            "isKey": false
-        },
-        "optionB": {
-            "text": "Saya tetap tenang dan fokus mencari solusi",
-            "isKey": true
-        }
-    },
-    {
-        "id": 17,
-        "text": "Bila saya menerima kritik tajam...",
-        "var": "Neuroticism",
-        "optionA": {
-            "text": "Saya merenungkannya berhari-hari dan merasa jatuh",
-            "isKey": false
-        },
-        "optionB": {
-            "text": "Saya menjadikannya evaluasi praktis dan terus maju",
-            "isKey": true
-        }
-    },
-    {
-        "id": 18,
-        "text": "Menghadapi kegagalan mendadak...",
-        "var": "Neuroticism",
-        "optionA": {
-            "text": "Saya bisa bangkit dan tidak membiarkannya merusak mood saya",
-            "isKey": true
-        },
-        "optionB": {
-            "text": "Suasana hati saya sangat terpukul dan butuh waktu lama pulih",
-            "isKey": false
-        }
-    }
+  {
+    "id": "HARD02",
+    "variable": "Hardworking",
+    "question": "Ketika kebutuhan bertambah banyak, saya cenderung ....",
+    "option_a": "Fokus pada pekerjaan yang ada saat ini",
+    "option_b": "Menambah pekerjaan yang bisa dikerjaan saat senggang",
+    "key": "b"
+  },
+  {
+    "id": "HARD03",
+    "variable": "Hardworking",
+    "question": "Saya lebih suka",
+    "option_a": "Berjualan seperti yang biasa saya lakukan",
+    "option_b": "Mencoba mempromosikan dagangan melalui media sosial",
+    "key": "b"
+  },
+  {
+    "id": "HARD06",
+    "variable": "Hardworking",
+    "question": "Ketika ada peluang usaha, saya cenderung",
+    "option_a": "Mempertimbangkan kemampuan diri dan tingkat kesulitannya",
+    "option_b": "Semangat walaupun susah karena harus belajar hal baru",
+    "key": "b"
+  },
+  {
+    "id": "PROC06",
+    "variable": "Procrastination",
+    "question": "Saya adalah orang yang ....",
+    "option_a": "Langsung mengerjakan meskipun tidak maksimal",
+    "option_b": "Menunda pekerjaan untuk hasil yang mungkin lebih baik",
+    "key": "a"
+  },
+  {
+    "id": "PROC07",
+    "variable": "Procrastination",
+    "question": "Saat memiliki tagihan bulanan, saya cenderung ....",
+    "option_a": "Segera melunasi begitu masuk awal bulan",
+    "option_b": "Pasti melunasi walaupun mendekati batas waktu",
+    "key": "a"
+  },
+  {
+    "id": "PROC08",
+    "variable": "Procrastination",
+    "question": "Saya cenderung ....",
+    "option_a": "Fokus untuk menyelesaikan pekerjaan yang sudah dimulai",
+    "option_b": "Bisa menunda pekerjaan yang sudah dimulai",
+    "key": "a"
+  },
+  {
+    "id": "CONS07",
+    "variable": "Conscientiousness",
+    "question": "Saya cenderung ....",
+    "option_a": "Cepat bertindak tanpa pikir dua kali",
+    "option_b": "Hati-hati dalam mengambil keputusan",
+    "key": "b"
+  },
+  {
+    "id": "CONS08",
+    "variable": "Conscientiousness",
+    "question": "Ketika teman menawari arisan, saya cenderung ....",
+    "option_a": "Percaya dan mendaftarkan diri karena mampu",
+    "option_b": "Penuh pertimbangan dan memikirkan akibatnya",
+    "key": "b"
+  },
+  {
+    "id": "CONS09",
+    "variable": "Conscientiousness",
+    "question": "Saya cenderung",
+    "option_a": "Mencari pinjaman yang cepat cair karena syaratnya mudah",
+    "option_b": "Mencari pinjaman yang terpercaya meskipun syaratnya rumit",
+    "key": "b"
+  },
+  {
+    "id": "LOCU06",
+    "variable": "Locus of Control",
+    "question": "Saat ada toko/warung yang lebih laris, terkadang saya berpikir bahwa",
+    "option_a": "Toko/warung tersebut menggunakan penglaris",
+    "option_b": "Menyadari bahwa barang yang saya jual kurang bervariasi",
+    "key": "b"
+  },
+  {
+    "id": "LOCU07",
+    "variable": "Locus of Control",
+    "question": "Jika orang lain mengkritik, saya biasanya ....",
+    "option_a": "Menerima kritik dan mempertanyakan kenapa saya sering disalahkan",
+    "option_b": "Menerima kritik dan mencari cara untuk memperbaikinya",
+    "key": "b"
+  },
+  {
+    "id": "LOCU09",
+    "variable": "Locus of Control",
+    "question": "Jika tiba-tiba saya menjadi korban penipuan, saya merasa ....",
+    "option_a": "Sangat membenci penipu dan menyalahkannya",
+    "option_b": "Sangat sedih dan menyalahkan diri sebagai pembelajaran",
+    "key": "b"
+  },
+  {
+    "id": "RESP02",
+    "variable": "Responsibility",
+    "question": "Saya cenderung",
+    "option_a": "Melakukan usaha yang berganti-ganti",
+    "option_b": "Melakukan usaha yang sama dengan tambahan ide baru",
+    "key": "b"
+  },
+  {
+    "id": "RESP07",
+    "variable": "Responsibility",
+    "question": "Ketika ada produk yang sudah tidak layak jual, biasanya saya akan",
+    "option_a": "Menjual dengan harga murah agar tidak rugi",
+    "option_b": "Membuang agar tidak merugikan pembeli",
+    "key": "b"
+  },
+  {
+    "id": "RESP08",
+    "variable": "Responsibility",
+    "question": "Jika seseorang bertanya kualitas produk yang saya jual, saya biasanya ....",
+    "option_a": "Menjelaskan berbagai kelebihan dan manfaatnya",
+    "option_b": "Menjelaskan kelebihan dan kekurangannya",
+    "key": "b"
+  },
+  {
+    "id": "NEUR03",
+    "variable": "Neuroticism",
+    "question": "Saya berpikir bahwa ....",
+    "option_a": "Orang selain saya juga pasti berutang ketika terdesak",
+    "option_b": "Memiliki utang akan membuat saya sulit tidur dan makan",
+    "key": "a"
+  },
+  {
+    "id": "NEUR06",
+    "variable": "Neuroticism",
+    "question": "Jika belum mampu melunasi cicilan rutin, yang langsung terlintas ialah ....",
+    "option_a": "Meyakini ada solusi meski belum terbayangkan",
+    "option_b": "Merasa khawatir karena penghasilan belum stabil",
+    "key": "a"
+  },
+  {
+    "id": "NEUR09",
+    "variable": "Neuroticism",
+    "question": "Jika tagihan listrik rumah meningkat, saya ....",
+    "option_a": "Memeriksa kembali biaya tagihan dan langsung membayar",
+    "option_b": "Panik dan menunda pembayaran karena tidak sesuai perkiraan",
+    "key": "a"
+  }
 ]
