@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li><span class="profile-label">Penghasilan</span> <span class="profile-value">${userData.income}</span></li>
         `;
 
-        // Update Score and Status logic (>= 30 LAYAK)
+        // Update Score and Status logic based on new cut-off
         const scoreVal = document.getElementById('totalScoreValue');
         const badge = document.getElementById('eligibilityStatus');
         const statusCard = document.getElementById('statusCard');
@@ -205,15 +205,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         scoreVal.textContent = totalScore;
 
-        if (totalScore >= 30) {
-            badge.textContent = "LAYAK";
+        if (totalScore >= 33.9) {
+            badge.textContent = "SANGAT LAYAK (Prioritas Utama)";
+            badge.className = "status-badge sangat-layak";
+            statusDesc.textContent = "Skor maksimal, nasabah prioritas utama untuk kredit.";
+            statusCard.style.borderTop = "4px solid var(--success)";
+        } else if (totalScore >= 30) {
+            badge.textContent = "LAYAK (Disetujui)";
             badge.className = "status-badge layak";
-            statusDesc.textContent = "Skor memenuhi kelayakan kredit (>= 30).";
+            statusDesc.textContent = "Skor memenuhi kelayakan standar kredit.";
             statusCard.style.borderTop = "4px solid var(--success)";
         } else {
-            badge.textContent = "TIDAK LAYAK";
+            badge.textContent = "TIDAK LAYAK (Ditinjau Ulang/Ditolak)";
             badge.className = "status-badge tidak-layak";
-            statusDesc.textContent = "Skor tidak memenuhi ambang batas minimal (< 30).";
+            statusDesc.textContent = "Skor tidak memenuhi ambang batas minimal kelayakan.";
             statusCard.style.borderTop = "4px solid var(--error)";
         }
 
@@ -273,7 +278,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Half Doughnut Gauge Chart for Total Score (18 to 36)
         // Normalize range 18-36 to 0-100 logic visually 
         const maxScore = 36;
-        const color = totalScore >= 30 ? '#10B981' : '#EF4444'; // Green or Red
+        let color = '#EF4444'; // Red for TIDAK LAYAK
+        if (totalScore >= 33.9) {
+            color = '#4F46E5'; // Indigo for SANGAT LAYAK
+        } else if (totalScore >= 30) {
+            color = '#10B981'; // Green for LAYAK
+        }
+        
         const remainder = maxScore - totalScore;
 
         new Chart(ctxGauge, {

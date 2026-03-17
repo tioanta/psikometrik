@@ -504,6 +504,13 @@ body {
     border: 2px solid var(--success);
 }
 
+.status-badge.sangat-layak {
+    background: rgba(79, 70, 229, 0.15); /* Primary indigo shade */
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
 .status-badge.tidak-layak {
     background: rgba(239, 68, 68, 0.15);
     color: var(--error);
